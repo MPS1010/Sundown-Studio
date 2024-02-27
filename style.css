@@ -1,0 +1,453 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: sans-serif;
+
+}
+html, body {
+    /*overflow-x: hidden;*/
+    height: 100%;
+    width: 100%;
+} 
+
+#main{
+    position: relative;
+    z-index: 10;
+}
+
+
+#page1{
+    min-height: 100vh;
+    width:100%;
+    background-color: #EFEAE3;
+    position: relative;
+    padding: 0vw  1vw;
+}  
+nav{
+    padding: 1vw 2vw; /* up-down=1, right-left=0vw*/
+    width: 100%;
+   /* background-color: red;*/
+    display:flex;      /* sbhi words ek line m aajayenge of first line*/
+    align-items: center;
+    justify-content: Space-between;     
+}
+#nav-part2{
+    padding-right: 1vw;
+    display:flex;
+    align-items: center;
+    gap: 1vw;
+}
+#nav-part2 h4{
+    padding:10px 20px;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 50px;
+    font-weight: 500;
+    position: relative;
+    color: rgb(220, 220, 220);
+    font-size: 18px;
+    transition: all ease 0.4s;
+    overflow: hidden;
+}
+#nav-part2 h4::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    transition: all ease 0.4s;
+    
+}
+#nav-part2 h4:hover::after{
+
+    bottom: 0% ;
+    border-radius: 50px;
+}
+#nav-part2 h4 a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    z-index: 9;
+}
+#nav-part2 h4:hover a{
+    color: white;
+}
+
+
+#center{
+    height:65vh;
+    width: 100%;
+    display:flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #b8b8b8;
+    padding-bottom: 2.5vw;
+}
+#left h3{
+    width: 30vw;
+    font-size: 1.8vw;
+    line-height: 2vw;
+    padding-left: 2vw ;
+    padding-bottom: 3vw;
+
+}
+#right h1{
+    font-size: 10vw;
+    line-height: 9vw;
+    text-align: right;
+}
+
+#page1 video{
+    position: relative;
+    border-radius: 30px;
+    margin-top:5vw;
+    width: 100%
+}
+#hero-shape {
+    position: absolute;
+    height: 46vw;
+    width: 40vw;
+    right: 0;
+    top:65vh;
+}
+#hero1{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #FE370B;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    filter:blur(20px);
+}
+#hero2{
+    position: absolute;
+    height: 30vw;
+    width: 30vw;
+    background-color: #FE330A;
+    border-radius: 50%;
+    filter:blur(20px);
+    animation-name: anime2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#hero3{
+    position: absolute;
+    height: 30vw;
+    width: 30vw;
+    filter:blur(20px);
+    background: linear-gradient(#FE370B, rgb(255, 149, 0)) ;
+    border-radius: 50%;
+    filter:blur(20px);
+    animation-name: anime1;
+    animation-duration: 3s;
+    animation-timing-function: linear; /* speed will be constant-no fast or slow speed*/
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes anime1{
+    from{ 
+        transform: translate(85%, -2%);
+    }
+    to{
+        transform: translate(0%,10%);
+    }
+   
+}
+@keyframes anime2
+{
+    from{ 
+        transform: translate(5%, -5%);
+    }
+    to{
+        transform: translate(-20%,30%);
+    }
+}
+#page2{
+    min-height: 70vh;
+    width:100%;
+    background-color: #EFEAE3;
+    padding: 8vw 0;
+    position: relative;
+}
+#moving-text{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+#moving-text::-webkit-scrollbar{
+    display: none;
+}
+.con{
+    white-space: nowrap;  /* ek 'con' vaale saare children ek hi line m aajayenge*/ 
+    display: inline-block;
+    animation-name: move;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear ;
+}
+
+#moving-text h1{
+    font-size: 9vh;
+    display: inline-block;  /*ye lightblue color ko jhaan thk words h vhaan thk hi color rkhega*/
+}
+#gola{
+    height:28px;
+    width:28px;
+    border-radius: 50%;
+    display: inline-block;   /* ye golla ko pehli line ke last m lgga dega.  */
+    background-color: #FE370B;
+    margin: 1vw 3vw;
+}
+@keyframes move {
+    from{
+        transform:translate(0);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+#page2-bottom{
+    height:80vh;
+    width:100%;
+    padding: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9;
+}
+#page2-bottom h1{
+    line-height: 3.3vw;
+    font-size: 2.5vw;
+    width: 45%;
+}
+#bottom-part2{
+    width:35%;
+    padding: 2vw;
+}
+#bottom-part2 img{
+    width: 90%;
+    border-radius: 10px; 
+}
+#bottom-part2 p{
+
+    font-size:1.2vw ;
+    width:90%;
+    margin-top: 2vw;
+}
+
+#page2 #gooye{
+     height:35vw;
+     width:38vw;
+     position: absolute;
+     border-radius: 50%;
+     background: linear-gradient(to top right, #FE330A, #fe750c); 
+     top: 48%;
+     left: 28%;
+     filter: blur(25px); 
+     animation-name: gooye;
+     animation-duration: 3s;
+     animation-timing-function: ease-in-out;
+     animation-direction: alternate;
+     animation-iteration-count: infinite; 
+}
+
+
+@keyframes gooye{
+    from {
+        filter: blur(10px);
+        transform: translate(10%-10%) skew(0);   /* skew- kissi object ke size ko change krne ke kaan aata hai*/
+    }
+    to {
+       filter: blur(25px);
+        transform: translate(-10%, 10%) skew(-13deg);
+
+}
+}
+
+
+#page3{
+   min-height: 100vh;
+    width:100%;
+    background-color: #EFEAE3;
+    
+}
+.elem{
+    height:100px;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgb(138, 138, 138);
+    Position:relative;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    overflow:hidden
+
+}
+.elem h2{
+    font-size:3vw ;
+    /*position: relative;*/
+    z-index: 9;
+}
+.elem .overlay{
+    height:100%;
+    width:100%;
+    background-color: #fdab25;
+    position: absolute;
+    left: 0%;
+    Top: -100%;
+    transition: all ease 0.3s;
+}
+
+.elem:hover .overlay{
+    top: 0%;
+
+}
+
+#fixed-image{
+    height:30vw;
+    width: 24vw;
+    left: 50%;
+    background-color: #FE330A;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 99;
+    Top:30%;
+    display:none;
+    background-size: cover;
+    background-position: center;
+}
+
+
+#page-4-0{
+    position:realtive;
+    height:7vh;
+    width:100%;
+    background-color: #EFEAE3;
+    padding: 2vw 4vw;
+    display: flex;
+
+}
+
+#dot{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #FE330A;
+    margin: 0.5vw 2vw;
+}
+#page-4-0 h1{
+    font-size: 2.4vw;
+}
+
+
+
+#page4{
+    
+    height:70vh;
+    width:100%;
+    background-color: #EFEAE3;
+    padding-top: 2vw;
+    padding-left: 5vw;
+    padding-right: 7vw;
+    display:flex;
+    align-items: center;
+} 
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .swiper-slide{
+    imgg{ padding-left: 5vw;
+        height:150px;
+    width:150px;}
+  }
+
+  #txt{
+    padding-right: 35vw;
+    padding-left: 5vw;
+
+  }
+
+
+  .swiper-slide {
+    width: 32%;
+    padding: 4vw 3vw;
+    font-size: 2vw;
+    border-left: 1px solid rgb(170, 170, 170);
+  }
+
+
+
+  #page-5{
+    height:70vh;
+    width: 100%;
+    background-color: #EFEAE3;
+
+  }
+  #page-5new{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+   /* padding : 6vw 0vw;*/
+    padding-left: 18vw;
+    padding-right: 5vw;
+    padding-top: 3vw;
+    
+  }
+#join{
+    
+    display:flex;
+    padding-left: 4vw ;
+    padding-top: 4vw;
+}
+
+#join h1{
+    font-size: 3vw;
+}
+
+  #doto{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #FE330A;
+    margin: 0.5vw 1vw;
+    
+    
+  }
+
+
+
+  #image{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+   /* padding : 6vw 0vw;*/
+    padding-left: 20vw;
+    padding-right: 7vw;
+    padding-top: 7vw;
+
+    img{
+        height: 50px;
+        width:50px;
+    }
+  }
+ 
+  #last{
+    padding:10px 20px;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 50px;
+    font-weight: 500;
+    position: relative;
+    color: rgb(20, 20, 20);
+    font-size: 18px;
+  }
+
+   
